@@ -1,117 +1,99 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Tsai | 南台資訊有限公司 執行長</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-    <nav class="navbar">
-        <div class="logo">南台資訊 <span>NSTC</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">首頁</a></li>
-            <li><a href="#about">關於我</a></li>
-            <li><a href="#services">服務項目</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
-
-    <header id="home" class="hero-section">
-        <div class="hero-content">
-            <h2>連結未來，數據賦能</h2>
-            <p>「用頂尖技術，為企業打造堅實的數位轉型之翼。」</p>
-            <a href="#services" class="btn">探索我們的服務</a>
-        </div>
-    </header>
-
-    <section id="about" class="about-section">
-        <div class="container">
-            <h3 class="section-title">執行長簡介</h3>
-            <div class="profile-card">
-                <div class="profile-info">
-                    <div class="name-title">
-                        <h1>Peter Tsai</h1>
-                        <p class="title">執行長 | CEO</p>
-                        <p class="company">南台資訊有限公司</p>
-                    </div>
-                    <hr>
-                    <p class="bio">
-                        擁有超過十年的網路架構與雲端整合經驗，帶領南台資訊頂尖團隊，致力於為各產業客戶提供最具效益的數位轉型方案。我們深信，資訊技術不只是工具，更是推動企業營運重塑與全面升級的核心引擎。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="container">
-            <h3 class="section-title">核心服務項目</h3>
-            <div class="services-grid">
-                <div class="service-box">
-                    <i class="fa-solid fa-laptop-code service-icon"></i>
-                    <h4>企業數位轉型與客製化軟體開發</h4>
-                    <p>依據企業痛點，量身打造高效能 Web 系統、行動端 App 及內部管理平台（ERP/CRM）。</p>
-                </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-cloud service-icon"></i>
-                    <h4>雲端架構部署與維運服務</h4>
-                    <p>提供 AWS、Azure 及 GCP 雲端整合規劃、資料庫搬遷與 24/7 自動化監控，確保服務永不中斷。</p>
-                </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-shield-halved service-icon"></i>
-                    <h4>資安防護與網路工程解決方案</h4>
-                    <p>企業網路架構規劃、防火牆部署、漏洞掃描與資安健檢，全面建立企業最高規防護網。</p>
-                </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-chart-pie service-icon"></i>
-                    <h4>大數據分析與 AI 智能應用</h4>
-                    <p>協助企業清洗並活化核心數據，導入 AI 預測模型與商業智慧（BI）看板，驅動精準決策。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h3 class="section-title">聯絡資訊</h3>
-            <div class="contact-wrapper">
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>電子郵件</p>
-                    <a href="mailto:chtsai@stust.edu.tw">chtsai@stust.edu.tw</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>連絡電話</p>
-                    <a href="tel:062533131">06-253-3131</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p>公司地址</p>
-                    <a href="#">台灣台南市永康區 (模擬地址)</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 南台資訊有限公司. All Rights Reserved. Designed by NSTC.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html># -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Tue Jun  2 20:35:06 2026
 
-This is a temporary script file.
+@author: user
 """
 
+import streamlit as st
+
+# --- 網頁基礎設定 ---
+st.set_page_config(
+    page_title="Peter Tsai | 個人簡歷 & 南台資訊",
+    page_icon="💼",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
+
+# --- 隱藏 Streamlit 預設樣式（提升高質感 Vibe） ---
+hide_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stButton>button {
+        border-radius: 20px;
+        background-color: #1E3A8A;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        transition: 0.3s;
+    }
+    .stButton>button:hover {
+        background-color: #3B82F6;
+        color: white;
+        transform: scale(1.05);
+    }
+    </style>
+"""
+st.markdown(hide_style, unsafe_html=True)
+
+# --- 側邊欄：聯絡資訊 (Sidebar) ---
+with st.sidebar:
+    st.markdown("## 聯絡資訊 \n---")
+    st.markdown("### 📞 電話")
+    st.markdown("[06-253-3131](tel:062533131)")
+    
+    st.markdown("### ✉️ 電子郵件")
+    st.markdown("[6B4P1014@stust.edu.tw](mailto:6B4P1014@stust.edu.tw)")
+    
+    st.markdown("### 🌐 社群連結")
+    st.link_button("🌐 Facebook 專頁", "https://www.facebook.com/keepbusytsai")
+    
+    st.write("")
+    st.caption("© 2026 Peter Tsai. All rights reserved.")
+
+# --- 主頁面：個人簡歷 ---
+st.title("👨‍💻 Peter Tsai")
+st.subheader("南台資訊有限公司 | 職稱：學生")
+
+st.markdown("""
+> **「持續忙碌，持續卓越。用程式碼與創新邏輯，為企業打造下一世代的數位藍圖。」**
+""")
+
+st.write("")
+st.write("")
+
+# --- 公司宣傳標語 ---
+st.markdown("---")
+st.markdown("<h2 style='text-align: center; color: #1E3A8A;'>💡 企業核心與宣傳標語</h2>", unsafe_html=True)
+st.markdown("<h3 style='text-align: center; font-style: italic; color: #4B5563;'>「連結數據，驅動未來；南台資訊，您最信賴的數位轉型夥伴。」</h3>", unsafe_html=True)
+st.write("")
+
+# --- 常見服務項目 (以美觀的卡片/欄位呈現) ---
+st.markdown("### 🛠️ 專業服務項目 (Services)")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    with st.container(border=True):
+        st.markdown("#### 🌐 響應式網頁開發")
+        st.write("量身打造高質感、跨平台的企業官網、電商系統與 Web App，兼顧 SEO 與流暢的使用者體驗。")
+
+    with st.container(border=True):
+        st.markdown("#### ☁️ 雲端架構與系統整合")
+        st.write("提供 AWS / GCP 雲端部署與維護，協助企業架構優化，打造高可用性且安全的系統環境。")
+
+with col2:
+    with st.container(border=True):
+        st.markdown("#### 📊 數據分析與 AI 應用")
+        st.write("自動化數據採集（爬蟲）、資料視覺化分析，並導入 AI 模型提升企業決策效率。")
+
+    with st.container(border=True):
+        st.markdown("#### 🔒 網路安全與維護")
+        st.write("全方位的資訊安全檢測、伺服器定期備份與即時監控，確保企業資產萬無一失。")
+
+# --- 頁尾互動 ---
+st.write("")
+st.markdown("---")
+st.markdown("<center><b>對我們的服務感興趣？歡迎點擊左側聯絡方式，或直接透過 Facebook 與我聯繫！</b></center>", unsafe_html=True)
